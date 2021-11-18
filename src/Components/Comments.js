@@ -54,16 +54,18 @@ function Comments(props) {
     }
 
 
-
     return (
         <ul style={{ listStyleType: "none" }}>
 
             <li>
-                <input type="text" placeholder='Add Comment' onChange={(event) => setInputValue(event.target.value)} />
-                <button onClick={() => handleAddComment()}>+</button>
+                <form>
+                    <input type="text" placeholder='Add Comment' onChange={(event) => setInputValue(event.target.value)} />
+                    <button type="reset" onClick={() => handleAddComment()}>+</button>
+                </form>
             </li>
 
             <ViewComments />
+
 
         </ul >
     );
