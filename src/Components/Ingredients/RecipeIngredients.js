@@ -1,11 +1,14 @@
 import React from 'react';
-import Comments from './Comments'
+import { useSelector } from 'react-redux';
+import Comments from '../Comments'
+import { selectMultiplier } from '../ServingSize/ServingSizeSlice'
 
 function RecipeIngredients(props) {
+    var multiplier = useSelector(selectMultiplier);
     const ingredients = props.ingredients.map((ingredient, index) => {
         return (
             <li className="ingredient">
-                <strong>{ingredient.name}</strong>: {ingredient.amount} {ingredient.measure}
+                <strong>{ingredient.name}</strong>: {multiplier * (ingredient.amount)} {ingredient.measure}
                 <Comments />
             </li>
         )

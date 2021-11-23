@@ -1,8 +1,9 @@
-import { eventListeners } from '@popperjs/core';
 import React, { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 
-function Comments(props) {
+function Comments() {
 
     var [Comments, setComments] = useState([]);
     const [inputValue, setInputValue] = useState('');
@@ -21,10 +22,10 @@ function Comments(props) {
     };
 
 
-    function ViewComments(props) {
+    function ViewComments() {
         const commentList = Comments.map((comment, index) => {
             return (
-                <li className="comment">{comment.Comment} <button className="Upvote" onClick={() => handleLikes(index)}>{comment.upVotes}</button></li>
+                <li className="comment">{comment.Comment} <FontAwesomeIcon icon={faArrowUp} onClick={() => handleLikes(index)} /> {comment.upVotes}</li>
 
             )
         }
@@ -58,9 +59,11 @@ function Comments(props) {
         <ul style={{ listStyleType: "none" }}>
 
             <li>
-                <form>
+                <form id="comment-input">
                     <input type="text" placeholder='Add Comment' onChange={(event) => setInputValue(event.target.value)} />
-                    <button type="reset" onClick={() => handleAddComment()}>+</button>
+                    <button type='reset' onClick={() => { handleAddComment(); }}>
+                        <FontAwesomeIcon icon={faPlus} />
+                    </button>
                 </form>
             </li>
 
