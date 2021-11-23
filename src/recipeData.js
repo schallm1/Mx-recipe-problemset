@@ -1,6 +1,6 @@
 export default () => {
   return {
-    title: 'Chocolate Chip Coookies',
+    title: 'Chocolate Chip Cookies',
     timeToMake: 1,
     servings: 24,
     ingredients: [
@@ -54,7 +54,7 @@ export default () => {
       "Dissolve baking soda in hot water, add to batter along with salt",
       "Stir in flour and chocolate chips",
       "Drop large spoonfuls onto ungreased pans",
-      "Bake for aobut 10 minutes in preheated oven, or until edges are nicely browned"
+      "Bake for about 10 minutes in preheated oven, or until edges are nicely browned"
     ]
   }
 }
